@@ -47,37 +47,41 @@ local Buffs = {
 	[08] = { name = "Shadow Protection", shortName = "Shadow Protection", color = { r = 0.6, g = 0.6, b = 0.6 },
 				buffNames = { "Shadow Protection", "Prayer of Shadow Protection" } },
 			
-	[09] = { name = "Blessing of Salvation", shortName = "Salvation", color = { r = 0.96, g = 0.55, b = 0.73 },
+	[09] = { name = "Blessing of Kings", shortName = "Kings", color = { r = 0.96, g = 0.55, b = 0.73 },
+				buffNames = { "Blessing of Kings", "Greater Blessing of Kings" },
+				missingMode = "class" },	
+			
+	[10] = { name = "Blessing of Salvation", shortName = "Salvation", color = { r = 0.96, g = 0.55, b = 0.73 },
 				buffNames = { "Blessing of Salvation", "Greater Blessing of Salvation" },
 				missingMode = "class" },		
 
-	[10] = { name = "Blessing of Wisdom", shortName = "Wisdom", color = { r = 0.96, g = 0.55, b = 0.73 },
+	[11] = { name = "Blessing of Wisdom", shortName = "Wisdom", color = { r = 0.96, g = 0.55, b = 0.73 },
 				buffNames = { "Blessing of Wisdom", "Greater Blessing of Wisdom" },
 				classes = {"HUNTER", "WARLOCK", "PRIEST", "PALADIN", "DRUID", "MAGE"},
 				missingMode = "class" },
 
-	[11] = { name = "Blessing of Might", shortName = "Might", color = { r = 0.96, g = 0.55, b = 0.73 },
+	[12] = { name = "Blessing of Might", shortName = "Might", color = { r = 0.96, g = 0.55, b = 0.73 },
 				buffNames = { "Blessing of Might", "Greater Blessing of Might" },
 				classes = {"WARRIOR", "ROGUE"},
 				missingMode = "class" },
 
-	[12] = { name = "Blessing of Light", shortName = "Light", color = { r = 0.96, g = 0.55, b = 0.73 },
+	[13] = { name = "Blessing of Light", shortName = "Light", color = { r = 0.96, g = 0.55, b = 0.73 },
 				buffNames = { "Blessing of Light", "Greater Blessing of Light" },
 				missingMode = "class" },	
 				
-	[13] = { name = "Blessing of Sanctuary", shortName = "Sanctuary", color = { r = 0.96, g = 0.55, b = 0.73 },
+	[14] = { name = "Blessing of Sanctuary", shortName = "Sanctuary", color = { r = 0.96, g = 0.55, b = 0.73 },
 				buffNames = { "Blessing of Sanctuary", "Greater Blessing of Sanctuary" },
 				missingMode = "class" },	
 
-	[14] = { name = "Rallying Cry of the Dragonslayer", shortName = "Dragonslayer", color = { r = 0, g = 0, b = 0 } },	
+	[15] = { name = "Rallying Cry of the Dragonslayer", shortName = "Dragonslayer", color = { r = 0, g = 0, b = 0 } },	
 	
-	[15] = { name = "Songflower Serenade", shortName = "Songflower", color = { r = 0, g = 0, b = 0 } },	
+	[16] = { name = "Songflower Serenade", shortName = "Songflower", color = { r = 0, g = 0, b = 0 } },	
 	
-	[16] = { name = "Greater Fire Protection Potion", shortName = "Fire Protection", color = { r = 1, g = 0, b = 0 } },	
+	[17] = { name = "Greater Fire Protection Potion", shortName = "Fire Protection", color = { r = 1, g = 0, b = 0 } },	
 	
-	[17] = { name = "In Combat", shortName = "In Combat", color = { r = 1, g = 1, b = 1 }, func = "CheckInCombat" },	
+	[18] = { name = "In Combat", shortName = "In Combat", color = { r = 1, g = 1, b = 1 }, func = "CheckInCombat" },	
 	
-	[18] = { name = "Soulstone Resurrection", shortName = "Soulstones", color = { r = 0.58, g = 0.51, b = 0.79 }, func = "CheckSoulstones" },			
+	[19] = { name = "Soulstone Resurrection", shortName = "Soulstones", color = { r = 0.58, g = 0.51, b = 0.79 }, func = "CheckSoulstones" },			
 }
 
 
