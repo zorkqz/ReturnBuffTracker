@@ -217,19 +217,16 @@ function ReturnBuffTracker:CheckInCombat(buff)
 	groups = {}	
 	for k, player in pairs(players) do 
 		if not groups[player.group] then
-			groups[player.group] = { count = 0, text = "Group " .. player.group .. ":" }
+			groups[player.group] = { text = "Group " .. player.group .. ":" }
 		end
-		groups[player.group].count = groups[player.group].count + 1
-		if groups[player.group].count > 3 then
-			groups[player.group].text = "Group " .. player.group
-		else
-			groups[player.group].text = groups[player.group].text .. " " .. player.name
-		end
-		
-		for i, group in ipairs(groups) do
-			tooltip[i + 1] = group.text
-		end
-	end
+        groups[player.group].text = groups[player.group].text .. " " .. player.name
+    end
+    
+    local i = 2
+    for _, group in ipairs(groups) do
+        tooltip[i] = group.text
+        i = i + 1
+    end
 	
 	return inCombat, total, tooltip
 end
@@ -255,7 +252,7 @@ end
 function ReturnBuffTracker:CheckBuff(buff)
 	local buffs = 0
 	local totalBuffs = 0
-	local missingBuffs = {}
+	local players = {}
 	
 	for i = 1,40 do
 		name, _, group, _, _, class = GetRaidRosterInfo(i)
@@ -264,7 +261,7 @@ function ReturnBuffTracker:CheckBuff(buff)
 			if ReturnBuffTracker:CheckUnitBuff("raid" .. i, buff) then
 				buffs = buffs + 1
 			else
-				missingBuffs[name] = { name = name, group = group, class = class }
+				players[name] = { name = name, group = group, class = class }
 			end
 		end	
 	end
@@ -276,36 +273,28 @@ function ReturnBuffTracker:CheckBuff(buff)
 	groups = {}	
 	
     if buff.missingMode == "class" then
-        for k, player in pairs(missingBuffs) do 
+        for k, player in pairs(players) do 
             if not groups[player.class] then
                 groups[player.class] = { text = classNames[player.class] .. ":" }
             end
             groups[player.class].text = groups[player.class].text .. " " .. player.name
         end
-    
-        local i = 2
-        for _, group in pairs(groups) do
-            tooltip[i] = group.text
-            i = i + 1
-        end
-    
-    else
-        
-        for k, player in pairs(missingBuffs) do 
+
+    else       
+        for k, player in pairs(players) do 
             if not groups[player.group] then
                 groups[player.group] = { count = 0, text = "Group " .. player.group .. ":" }
             end
             groups[player.group].text = groups[player.group].text .. " " .. player.name
         end
-                                  
-        local j = 2
-        for i, group in pairs(groups) do        
-            tooltip[j] = group.text
-            j = j + 1
-        end
 	end		
+    
+    local i = 2
+    for _, group in pairs(groups) do
+        tooltip[i] = group.text
+        i = i + 1
+    end
 	
-    --ReturnBuffTracker:Print("" .. buff.name .. ": " .. buffs .. "/" .. totalBuffs)
 	return buffs, totalBuffs, tooltip
 end
 
