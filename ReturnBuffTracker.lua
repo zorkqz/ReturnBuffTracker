@@ -77,7 +77,7 @@ local Buffs = {
 	
 	[16] = { name = "Songflower Serenade", shortName = "Songflower", color = { r = 0, g = 0, b = 0 } },	
 	
-	[17] = { name = "Fire Protection", shortName = "Fire Protection", optionText = "Greater Fire Protection Potion"
+	[17] = { name = "Fire Protection", shortName = "Fire Protection", optionText = "Greater Fire Protection Potion",
                 color = { r = 1, g = 0, b = 0 } },	
 	
 	[18] = { name = "In Combat", shortName = "In Combat", color = { r = 1, g = 1, b = 1 }, func = "CheckInCombat" },	
