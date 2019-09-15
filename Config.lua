@@ -18,7 +18,7 @@ local function getOptions()
 					description = {
 						name = "",
 						type = "description",
-						image = "Interface\\AddOns\\\ReturnBuffTracker\\media\\return",
+						image = "Interface\\AddOns\\ReturnBuffTracker\\media\\return",
 						imageWidth = 64,
 						imageHeight = 64,
 						width = "half",
