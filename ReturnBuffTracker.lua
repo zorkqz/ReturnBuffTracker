@@ -274,46 +274,38 @@ function ReturnBuffTracker:CheckBuff(buff)
 	tooltip[2] = "no one."
 		
 	groups = {}	
-	for k, player in pairs(missingBuffs) do 
-		if buff.missingMode == "class" then
-		
-			if not groups[player.class] then
-				groups[player.class] = { count = 0, text = classNames[player.class] .. ":" }
-			end
-			groups[player.class].count = groups[player.class].count + 1
-			if groups[player.class].count > 3 then
-				groups[player.class].text = classNames[player.class]
-			else
-				groups[player.class].text = groups[player.class].text .. " " .. player.name
-			end
-			
-			local i = 2
-			for _, group in pairs(groups) do
-				tooltip[i] = group.text
-				i = i + 1
-			end
-
-		else
-
-			if not groups[player.group] then
-				groups[player.group] = { count = 0, text = "Group " .. player.group .. ":" }
-			end
-			groups[player.group].count = groups[player.group].count + 1
-			if groups[player.group].count > 3 then
-				groups[player.group].text = "Group " .. player.group
-			else
-				groups[player.group].text = groups[player.group].text .. " " .. player.name
-			end
-			
-            local j = 2
-			for i, group in ipairs(groups) do
-				tooltip[j] = group.text
-                j = j + 1
-			end
-		
-		end
+	
+    if buff.missingMode == "class" then
+        for k, player in pairs(missingBuffs) do 
+            if not groups[player.class] then
+                groups[player.class] = { text = classNames[player.class] .. ":" }
+            end
+            groups[player.class].text = groups[player.class].text .. " " .. player.name
+        end
+    
+        local i = 2
+        for _, group in pairs(groups) do
+            tooltip[i] = group.text
+            i = i + 1
+        end
+    
+    else
+        
+        for k, player in pairs(missingBuffs) do 
+            if not groups[player.group] then
+                groups[player.group] = { count = 0, text = "Group " .. player.group .. ":" }
+            end
+            groups[player.group].text = groups[player.group].text .. " " .. player.name
+        end
+                                  
+        local j = 2
+        for i, group in pairs(groups) do        
+            tooltip[j] = group.text
+            j = j + 1
+        end
 	end		
 	
+    --ReturnBuffTracker:Print("" .. buff.name .. ": " .. buffs .. "/" .. totalBuffs)
 	return buffs, totalBuffs, tooltip
 end
 
