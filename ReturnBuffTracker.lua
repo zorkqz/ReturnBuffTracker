@@ -305,8 +305,10 @@ function ReturnBuffTracker:CheckBuff(buff)
 				groups[player.group].text = groups[player.group].text .. " " .. player.name
 			end
 			
+            local j = 2
 			for i, group in ipairs(groups) do
-				tooltip[i + 1] = group.text
+				tooltip[j] = group.text
+                j = j + 1
 			end
 		
 		end
