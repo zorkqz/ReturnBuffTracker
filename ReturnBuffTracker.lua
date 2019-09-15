@@ -103,6 +103,7 @@ function ReturnBuffTracker:OnInitialize()
 	end
 	ReturnBuffTracker:UpdateBars()
 	
+    ReturnBuffTracker.nextBuff = 1
 	ReturnBuffTracker.nextTime = 0
 	ReturnBuffTracker.updateFrame = CreateFrame("Frame")
 	ReturnBuffTracker.updateFrame:SetScript("OnUpdate", ReturnBuffTracker.OnUpdate)
@@ -126,27 +127,31 @@ function ReturnBuffTracker:OnUpdate()
 	if currentTime < ReturnBuffTracker.nextTime then
 		return
 	end
-	ReturnBuffTracker.nextTime = currentTime + 1
+	ReturnBuffTracker.nextTime = currentTime + 0.1
 	
 	if not ReturnBuffTracker:CheckHideIfNotInRaid() then
 		return
 	end
-	
-	for k, buff in ipairs(Buffs) do
-		value = 0
-		maxValue = 1
-		tooltip = nil
-		if buff.func then
-			value, maxValue = ReturnBuffTracker[buff.func](ReturnBuffTracker, buff)
-		else
-			value, maxValue, tooltip = ReturnBuffTracker:CheckBuff(buff)
-		end
-		if value and maxValue and maxValue > 0 then
-			buff.bar:Update(value, maxValue, tooltip)
-		else
-			buff.bar:Update(0, 1, nil)
-		end
-	end
+    
+    buff = Buffs[ReturnBuffTracker.nextBuff]
+    ReturnBuffTracker.nextBuff = ReturnBuffTracker.nextBuff + 1
+	if ReturnBuffTracker.nextBuff > 19 then
+        ReturnBuffTracker.nextBuff = 1
+    end
+    
+    value = 0
+    maxValue = 1
+    tooltip = nil
+    if buff.func then
+        value, maxValue = ReturnBuffTracker[buff.func](ReturnBuffTracker, buff)
+    else
+        value, maxValue, tooltip = ReturnBuffTracker:CheckBuff(buff)
+    end
+    if value and maxValue and maxValue > 0 then
+        buff.bar:Update(value, maxValue, tooltip)
+    else
+        buff.bar:Update(0, 1, nil)
+    end
 		
 end
 
