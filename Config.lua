@@ -18,14 +18,14 @@ local function getOptions()
 					description = {
 						name = "",
 						type = "description",
-						image = "Interface\\AddOns\\\ReturnBuffTracker\\media\\return",
+						image = "Interface\\AddOns\\ReturnBuffTracker\\media\\return",
 						imageWidth = 64,
 						imageHeight = 64,
 						width = "half",
 						order = 1,
 					},
 					descriptiontext = {
-						name = "Return Buff Tracker by Irpa\nDiscord: https://discord.gg/SZYAKFy\n",
+						name = "Return Buff Tracker by Irpa\nDiscord: https://discord.gg/SZYAKFy\nGithub: https://github.com/zorkqz/ReturnBuffTracker\n",
 						type = "description",
 						width = "full",
 						order = 1.1,
