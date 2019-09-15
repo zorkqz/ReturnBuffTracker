@@ -163,7 +163,7 @@ function ReturnBuffTracker:CheckAlive()
 		name = GetRaidRosterInfo(i)
 		if name then
 			totalNumber = totalNumber + 1
-			if not UnitIsDead("raid" .. i) then
+			if not UnitIsDeadOrGhost("raid" .. i) then
 				aliveNumber = aliveNumber + 1
 			else
 				tooltip[j] = name
