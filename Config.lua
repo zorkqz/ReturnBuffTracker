@@ -25,7 +25,7 @@ local function getOptions()
 						order = 1,
 					},
 					descriptiontext = {
-						name = "Return Buff Tracker by Irpa\nDiscord: https://discord.gg/SZYAKFy\n",
+						name = "Return Buff Tracker by Irpa\nDiscord: https://discord.gg/SZYAKFy\nGithub: https://github.com/zorkqz/ReturnBuffTracker\n",
 						type = "description",
 						width = "full",
 						order = 1.1,
