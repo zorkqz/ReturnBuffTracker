@@ -98,10 +98,14 @@ end
 
 function ReturnBuffTracker:CheckHideIfNotInRaid()
     if not ReturnBuffTracker.db.profile.hideNotInRaid or IsInRaid() then
-        ReturnBuffTracker.mainFrame:Show()
+        if not ReturnBuffTracker.mainFrame:IsVisible() then
+            ReturnBuffTracker.mainFrame:Show()
+        end
         return true
     else
-        ReturnBuffTracker.mainFrame:Hide()
+        if ReturnBuffTracker.mainFrame:IsVisible() then
+            ReturnBuffTracker.mainFrame:Hide()
+        end
         return false
     end
 end
