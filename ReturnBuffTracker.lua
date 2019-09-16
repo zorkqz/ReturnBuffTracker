@@ -9,17 +9,6 @@ local defaults = {
     }
 }
 
-local classNames = {
-    WARRIOR = "Warrior",
-    ROGUE = "Rogue",
-    HUNTER = "Hunter",
-    WARLOCK = "Warlock",
-    PRIEST = "Priest",
-    PALADIN = "Paladin",
-    DRUID = "Druid",
-    MAGE = "Mage"
-}
-
 local Buffs = {
 
     [01] = { name = "Alive", shortName = "Alive", func = "CheckAlive", color = { r = 0.3, g = 1, b = 0.3 } },
@@ -281,7 +270,7 @@ function ReturnBuffTracker:CheckBuff(buff)
     if buff.missingMode == "class" then
         for k, player in pairs(players) do 
             if not groups[player.class] then
-                groups[player.class] = { text = classNames[player.class] .. ":" }
+                groups[player.class] = { text = ReturnBuffTracker.Constants.ClassNames[player.class] .. ":" }
             end
             groups[player.class].text = groups[player.class].text .. " " .. player.name
         end
