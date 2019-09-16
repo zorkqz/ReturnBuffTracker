@@ -58,7 +58,7 @@ function ReturnBuffTracker:OnUpdate()
     
     buff = ReturnBuffTracker.Buffs[ReturnBuffTracker.nextBuff]
     ReturnBuffTracker.nextBuff = ReturnBuffTracker.nextBuff + 1
-    if ReturnBuffTracker.nextBuff > 19 then
+    if ReturnBuffTracker.nextBuff > table.getn(ReturnBuffTracker.Buffs) then
         ReturnBuffTracker.nextBuff = 1
     end
     
