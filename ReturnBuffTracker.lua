@@ -62,6 +62,10 @@ function ReturnBuffTracker:OnUpdate()
         ReturnBuffTracker.nextBuff = 1
     end
     
+    if ReturnBuffTracker.db.profile.deactivatedBars[buff.optionText or buff.text or buff.name] then
+        return
+    end
+    
     value = 0
     maxValue = 1
     tooltip = nil
