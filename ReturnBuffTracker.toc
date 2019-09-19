@@ -5,15 +5,14 @@
 ## SavedVariables: ReturnBuffTrackerDB
 ## X-Category: Interface Enhancements
 
-ReturnBuffTracker.lua
-Buffs.lua
-Config.lua
-Constants.lua
-Widget.lua
-
 libs\LibStub\LibStub.lua
 libs\AceAddon-3.0\AceAddon-3.0.xml
 libs\AceConfig-3.0\AceConfig-3.0.xml
 libs\AceConsole-3.0\AceConsole-3.0.xml
 libs\AceDB-3.0\AceDB-3.0.xml
 
+ReturnBuffTracker.lua
+Buffs.lua
+Config.lua
+Constants.lua
+Widget.lua
