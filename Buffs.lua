@@ -56,13 +56,16 @@ ReturnBuffTracker.Buffs = {
     [15] = { name = "Rallying Cry of the Dragonslayer", shortName = "Dragonslayer", color = { r = 0, g = 0, b = 0 } },  
     
     [16] = { name = "Songflower Serenade", shortName = "Songflower", color = { r = 0, g = 0, b = 0 } }, 
+    [17] = { name = "Fengus' Ferocity", shortName = "DMT AP Buff", color = { r = 0, g = 0, b = 0 } }, 
+    [18] = { name = "Slip'kik's Savvy", shortName = "DMT Crit Buff", color = { r = 0, g = 0, b = 0 } }, 
+    [19] = { name = "Mol'dar's Moxie", shortName = "DMT Stam Buff", color = { r = 0, g = 0, b = 0 } }, 
     
-    [17] = { name = "Fire Protection", shortName = "Fire Protection", optionText = "Greater Fire Protection Potion",
+    [20] = { name = "Fire Protection", shortName = "Fire Protection", optionText = "Greater Fire Protection Potion",
                 color = { r = 1, g = 0, b = 0 } },  
     
-    [18] = { name = "In Combat", shortName = "In Combat", color = { r = 1, g = 1, b = 1 }, func = "CheckInCombat" },    
+    [21] = { name = "In Combat", shortName = "In Combat", color = { r = 1, g = 1, b = 1 }, func = "CheckInCombat" },    
     
-    [19] = { name = "Soulstone Resurrection", shortName = "Soulstones", color = { r = 0.58, g = 0.51, b = 0.79 }, func = "CheckSoulstones" },           
+    [22] = { name = "Soulstone Resurrection", shortName = "Soulstones", color = { r = 0.58, g = 0.51, b = 0.79 }, func = "CheckSoulstones" },           
 }
 
 function ReturnBuffTracker:CheckAlive()
