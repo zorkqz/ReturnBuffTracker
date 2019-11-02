@@ -56,9 +56,14 @@ ReturnBuffTracker.Buffs = {
     [15] = { name = "Rallying Cry of the Dragonslayer", shortName = "Dragonslayer", color = { r = 0, g = 0, b = 0 } },  
     
     [16] = { name = "Songflower Serenade", shortName = "Songflower", color = { r = 0, g = 0, b = 0 } }, 
-    [17] = { name = "Fengus' Ferocity", shortName = "DMT AP Buff", color = { r = 0, g = 1, b = 1 } }, 
-    [18] = { name = "Slip'kik's Savvy", shortName = "DMT Crit Buff", color = { r = 0, g = 1, b = 1 } }, 
-    [19] = { name = "Mol'dar's Moxie", shortName = "DMT Stam Buff", color = { r = 0, g = 1, b = 1 } }, 
+    
+    [17] = { name = "Fengus' Ferocity", shortName = "DMT AP", color = { r = 0, g = 1, b = 1 },
+            classes = {"WARRIOR", "ROGUE"}, }, 
+    
+    [18] = { name = "Slip'kik's Savvy", shortName = "DMT Crit", color = { r = 0, g = 1, b = 1 },
+             classes = { "WARLOCK", "PRIEST", "PALADIN", "DRUID", "MAGE" }}, 
+    
+    [19] = { name = "Mol'dar's Moxie", shortName = "DMT Stamina", color = { r = 0, g = 1, b = 1 } }, 
     
     [20] = { name = "Fire Protection", shortName = "Fire Protection", optionText = "Greater Fire Protection Potion",
                 color = { r = 1, g = 0, b = 0 } },  
