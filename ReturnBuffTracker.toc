@@ -1,6 +1,6 @@
 ## Title: ReturnBuffTracker
 ## Interface: 11302
-## Version: 0.4.1
+## Version: 0.5.0
 ## Author: Irpa
 ## SavedVariables: ReturnBuffTrackerDB
 ## X-Category: Interface Enhancements
