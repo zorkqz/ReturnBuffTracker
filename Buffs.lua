@@ -56,21 +56,17 @@ ReturnBuffTracker.Buffs = {
     [15] = { name = "Rallying Cry of the Dragonslayer", shortName = "Dragonslayer", color = { r = 0, g = 0, b = 0 } },  
     
     [16] = { name = "Songflower Serenade", shortName = "Songflower", color = { r = 0, g = 0, b = 0 } }, 
-    
-    [17] = { name = "Fengus' Ferocity", shortName = "DMT AP", color = { r = 0, g = 1, b = 1 },
-            classes = {"WARRIOR", "ROGUE"}, }, 
-    
-    [18] = { name = "Slip'kik's Savvy", shortName = "DMT Crit", color = { r = 0, g = 1, b = 1 },
-             classes = { "WARLOCK", "PRIEST", "PALADIN", "DRUID", "MAGE" }}, 
-    
-    [19] = { name = "Mol'dar's Moxie", shortName = "DMT Stamina", color = { r = 0, g = 1, b = 1 } }, 
+    [17] = { name = "Fengus' Ferocity", shortName = "DMT AP Buff", color = { r = 0, g = 1, b = 1 } }, 
+    [18] = { name = "Slip'kik's Savvy", shortName = "DMT Crit Buff", color = { r = 0, g = 1, b = 1 } }, 
+    [19] = { name = "Mol'dar's Moxie", shortName = "DMT Stam Buff", color = { r = 0, g = 1, b = 1 } }, 
     
     [20] = { name = "Fire Protection", shortName = "Fire Protection", optionText = "Greater Fire Protection Potion",
                 color = { r = 1, g = 0, b = 0 } },  
     
     [21] = { name = "In Combat", shortName = "In Combat", color = { r = 1, g = 1, b = 1 }, func = "CheckInCombat" },    
     
-    [22] = { name = "Soulstone Resurrection", shortName = "Soulstones", color = { r = 0.58, g = 0.51, b = 0.79 }, func = "CheckSoulstones" },           
+    [22] = { name = "Soulstone Resurrection", shortName = "Soulstones", color = { r = 0.58, g = 0.51, b = 0.79 }, func = "CheckSoulstones" },   
+    [23] = { name = "troll potion", shortName = "trollpotion", color = { r = 0.58, g = 0.51, b = 0.79 }, buffIDs = {3223}},          
 }
 
 function ReturnBuffTracker:CheckAlive()
@@ -223,7 +219,16 @@ end
 
 function ReturnBuffTracker:CheckUnitBuff(unit, buff)    
     for i = 1,40 do
-        b = UnitBuff(unit, i);
+        local b,_,_,_,_,_,_,_,_,spellId = UnitBuff(unit, i);
+
+        if buff.buffIDs then
+              if  ReturnBuffTracker:Contains(buff.buffIDs, spellId) then
+                return true;
+              end
+            else
+                return false;      
+        end
+
         if (buff.buffNames and ReturnBuffTracker:Contains(buff.buffNames, b)) or buff.name == b then
             return true
         end
