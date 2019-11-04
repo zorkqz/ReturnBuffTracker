@@ -2,75 +2,71 @@ local ReturnBuffTracker = LibStub("AceAddon-3.0"):GetAddon("ReturnBuffTracker")
 
 ReturnBuffTracker.Buffs = {
 
-    [01] = { name = "Alive", shortName = "Alive", func = "CheckAlive", color = { r = 0.3, g = 1, b = 0.3 } },
+    [01] = { name = "Alive", shortName = "Alive", func = "CheckAlive", color = { r = 0.3, g = 1, b = 0.3 }, buffOptionsGroup = "General" },
     
     [02] = { name = "Healer Mana", shortName = "Healer", optionText = "Healer Mana", func = "CheckMana", color = { r = 0.4, g = 0.6, b = 1 },
-                classes = { "PRIEST", "PALADIN", "DRUID" } },
+                classes = { "PRIEST", "PALADIN", "DRUID" }, buffOptionsGroup = "General" },
     
     [03] = { name = "DPS Mana", shortName = "DPS", optionText = "DPS Mana", func = "CheckMana", color = { r = 0.2, g = 0.2, b = 1 },
-                classes = { "HUNTER", "WARLOCK", "MAGE" } },
+                classes = { "HUNTER", "WARLOCK", "MAGE" }, buffOptionsGroup = "General" },
 
     [04] = { name = "Arcane Intellect", shortName = "Intellect", color = { r = 0.41, g = 0.8, b = 0.94 },
                 buffNames = { "Arcane Intellect", "Arcane Brilliance" },
-                classes = { "HUNTER", "WARLOCK", "PRIEST", "PALADIN", "DRUID", "MAGE" } },
+                classes = { "HUNTER", "WARLOCK", "PRIEST", "PALADIN", "DRUID", "MAGE" }, buffOptionsGroup = "Player" },
             
     [05] = { name = "Mark of the Wild", shortName = "MotW", color = { r = 1.0, g = 0.49, b = 0.04 },
-                buffNames = { "Mark of the Wild", "Gift of the Wild" } },
+                buffNames = { "Mark of the Wild", "Gift of the Wild" }, buffOptionsGroup = "Player" },
             
     [06] = { name = "Power Word: Fortitude", shortName = "Fortitude", color = { r = 1.0, g = 1.0, b = 1.0 },
-                buffNames = { "Power Word: Fortitude", "Prayer of Fortitude" } },
+                buffNames = { "Power Word: Fortitude", "Prayer of Fortitude" }, buffOptionsGroup = "Player" },
     
     [07] = { name = "Divine Spirit", shortName = "Divine Spirit", color = { r = 1.0, g = 1.0, b = 1.0 },
                 buffNames = { "Divine Spirit", "Prayer of Spirit" },
-                classes = { "PRIEST", "PALADIN", "DRUID", "MAGE" } },
+                classes = { "PRIEST", "PALADIN", "DRUID", "MAGE" }, buffOptionsGroup = "Player" },
     
     [08] = { name = "Shadow Protection", shortName = "Shadow Protection", color = { r = 0.6, g = 0.6, b = 0.6 },
-                buffNames = { "Shadow Protection", "Prayer of Shadow Protection" } },
+                buffNames = { "Shadow Protection", "Prayer of Shadow Protection" }, buffOptionsGroup = "Player" },
             
     [09] = { name = "Blessing of Kings", shortName = "Kings", color = { r = 0.96, g = 0.55, b = 0.73 },
-                buffNames = { "Blessing of Kings", "Greater Blessing of Kings" },
+                buffNames = { "Blessing of Kings", "Greater Blessing of Kings" }, buffOptionsGroup = "Player",
                 missingMode = "class" },    
             
     [10] = { name = "Blessing of Salvation", shortName = "Salvation", color = { r = 0.96, g = 0.55, b = 0.73 },
-                buffNames = { "Blessing of Salvation", "Greater Blessing of Salvation" },
+                buffNames = { "Blessing of Salvation", "Greater Blessing of Salvation" }, buffOptionsGroup= "Player", 
                 missingMode = "class" },        
 
     [11] = { name = "Blessing of Wisdom", shortName = "Wisdom", color = { r = 0.96, g = 0.55, b = 0.73 },
                 buffNames = { "Blessing of Wisdom", "Greater Blessing of Wisdom" },
-                classes = {"HUNTER", "WARLOCK", "PRIEST", "PALADIN", "DRUID", "MAGE"},
+                classes = {"HUNTER", "WARLOCK", "PRIEST", "PALADIN", "DRUID", "MAGE"}, buffOptionsGroup= "Player", 
                 missingMode = "class" },
 
     [12] = { name = "Blessing of Might", shortName = "Might", color = { r = 0.96, g = 0.55, b = 0.73 },
                 buffNames = { "Blessing of Might", "Greater Blessing of Might" },
-                classes = {"WARRIOR", "ROGUE"},
+                classes = {"WARRIOR", "ROGUE"}, buffOptionsGroup= "Player", 
                 missingMode = "class" },
 
     [13] = { name = "Blessing of Light", shortName = "Light", color = { r = 0.96, g = 0.55, b = 0.73 },
-                buffNames = { "Blessing of Light", "Greater Blessing of Light" },
+                buffNames = { "Blessing of Light", "Greater Blessing of Light" }, buffOptionsGroup= "Player",
                 missingMode = "class" },    
                 
     [14] = { name = "Blessing of Sanctuary", shortName = "Sanctuary", color = { r = 0.96, g = 0.55, b = 0.73 },
-                buffNames = { "Blessing of Sanctuary", "Greater Blessing of Sanctuary" },
+                buffNames = { "Blessing of Sanctuary", "Greater Blessing of Sanctuary" }, buffOptionsGroup= "Player",
                 missingMode = "class" },    
 
-    [15] = { name = "Rallying Cry of the Dragonslayer", shortName = "Dragonslayer", color = { r = 0, g = 0, b = 0 } },  
+    [15] = { name = "Rallying Cry of the Dragonslayer", shortName = "Dragonslayer", color = { r = 0, g = 0, b = 0 }, buffOptionsGroup= "World" },  
     
-    [16] = { name = "Songflower Serenade", shortName = "Songflower", color = { r = 0, g = 0, b = 0 } }, 
-    
-    [17] = { name = "Fengus' Ferocity", shortName = "DMT AP", color = { r = 0, g = 1, b = 1 },
-            classes = {"WARRIOR", "ROGUE"}, }, 
-    
-    [18] = { name = "Slip'kik's Savvy", shortName = "DMT Crit", color = { r = 0, g = 1, b = 1 },
-             classes = { "WARLOCK", "PRIEST", "PALADIN", "DRUID", "MAGE" }}, 
-    
-    [19] = { name = "Mol'dar's Moxie", shortName = "DMT Stamina", color = { r = 0, g = 1, b = 1 } }, 
+    [16] = { name = "Songflower Serenade", shortName = "Songflower", color = { r = 0, g = 0, b = 0 }, buffOptionsGroup= "World" }, 
+    [17] = { name = "Fengus' Ferocity", shortName = "DMT AP Buff", color = { r = 0, g = 1, b = 1 }, buffOptionsGroup= "World" }, 
+    [18] = { name = "Slip'kik's Savvy", shortName = "DMT Crit Buff", color = { r = 0, g = 1, b = 1 }, buffOptionsGroup= "World" }, 
+    [19] = { name = "Mol'dar's Moxie", shortName = "DMT Stam Buff", color = { r = 0, g = 1, b = 1 }, buffOptionsGroup= "World" }, 
     
     [20] = { name = "Fire Protection", shortName = "Fire Protection", optionText = "Greater Fire Protection Potion",
-                color = { r = 1, g = 0, b = 0 } },  
+                color = { r = 1, g = 0, b = 0 }, buffOptionsGroup= "Consumable" },  
     
-    [21] = { name = "In Combat", shortName = "In Combat", color = { r = 1, g = 1, b = 1 }, func = "CheckInCombat" },    
+    [21] = { name = "In Combat", shortName = "In Combat", color = { r = 1, g = 1, b = 1 }, buffOptionsGroup = "General",  func = "CheckInCombat" },    
     
-    [22] = { name = "Soulstone Resurrection", shortName = "Soulstones", color = { r = 0.58, g = 0.51, b = 0.79 }, func = "CheckSoulstones" },           
+    [22] = { name = "Soulstone Resurrection", shortName = "Soulstones", color = { r = 0.58, g = 0.51, b = 0.79 }, buffOptionsGroup = "Player" ,  func = "CheckSoulstones" },   
+    [23] = { name = "troll potion", shortName = "trollpotion", color = { r = 0.58, g = 0.51, b = 0.79 }, buffIDs = {3223}, buffOptionsGroup= "Consumable"},          
 }
 
 function ReturnBuffTracker:CheckAlive()
@@ -223,7 +219,16 @@ end
 
 function ReturnBuffTracker:CheckUnitBuff(unit, buff)    
     for i = 1,40 do
-        b = UnitBuff(unit, i);
+        local b,_,_,_,_,_,_,_,_,spellId = UnitBuff(unit, i);
+
+        if buff.buffIDs then
+              if  ReturnBuffTracker:Contains(buff.buffIDs, spellId) then
+                return true;
+              else
+                return false;  
+              end              
+        end
+
         if (buff.buffNames and ReturnBuffTracker:Contains(buff.buffNames, b)) or buff.name == b then
             return true
         end
