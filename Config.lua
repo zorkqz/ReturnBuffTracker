@@ -53,8 +53,8 @@ local function getOptions()
                         width = "double",
                         order = 4
                     },
-                    playerBuffs = {
-                        name = "Player buffs",
+                    generalBuffs = {
+                        name = "General Buffs",
                         type = "group",
                         order = 5,
                         args = {
@@ -64,7 +64,32 @@ local function getOptions()
                                 name = "",
                                 desc = "",
                                 order = 6,
-                                values = ReturnBuffTracker.OptionBarNames,
+                                values = ReturnBuffTracker.OptionBarNames.General,
+                                get = function(self, bar)
+                                    return
+                                        not ReturnBuffTracker.db.profile
+                                            .deactivatedBars[bar]
+                                end,
+                                set = function(self, bar, value)
+                                    ReturnBuffTracker.db.profile.deactivatedBars[bar] =
+                                        not value
+                                    ReturnBuffTracker:UpdateBars()
+                                end
+                            },
+                        }
+                    },
+                    playerBuffs = {
+                        name = "Player buffs",
+                        type = "group",
+                        order = 6,
+                        args = {
+
+                            bars = {
+                                type = "multiselect",
+                                name = "",
+                                desc = "",
+                                order = 6,
+                                values = ReturnBuffTracker.OptionBarNames.Player,
                                 get = function(self, bar)
                                     return
                                         not ReturnBuffTracker.db.profile
@@ -81,7 +106,7 @@ local function getOptions()
                     worldBuffs = {
                         name = "World Buffs",
                         type = "group",
-                        order = 6,
+                        order = 7,
                         args = {
 
                             bars = {
@@ -89,7 +114,7 @@ local function getOptions()
                                 name = "",
                                 desc = "",
                                 order = 6,
-                                values = ReturnBuffTracker.OptionBarNames,
+                                values = ReturnBuffTracker.OptionBarNames.World,
                                 get = function(self, bar)
                                     return
                                         not ReturnBuffTracker.db.profile
@@ -106,7 +131,7 @@ local function getOptions()
                     consumables = {
                         name = "Consumables",
                         type = "group",
-                        order = 7,
+                        order = 8,
                         args = {
 
                             bars = {
@@ -114,8 +139,9 @@ local function getOptions()
                                 name = "",
                                 desc = "",
                                 order = 6,
-                                values = ReturnBuffTracker.OptionBarNames,
+                                values = ReturnBuffTracker.OptionBarNames.Consumable,
                                 get = function(self, bar)
+                                    print(bar)
                                     return
                                         not ReturnBuffTracker.db.profile
                                             .deactivatedBars[bar]
