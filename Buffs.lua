@@ -66,7 +66,10 @@ ReturnBuffTracker.Buffs = {
     [21] = { name = "In Combat", shortName = "In Combat", color = { r = 1, g = 1, b = 1 }, buffOptionsGroup = "General",  func = "CheckInCombat" },    
     
     [22] = { name = "Soulstone Resurrection", shortName = "Soulstones", color = { r = 0.58, g = 0.51, b = 0.79 }, buffOptionsGroup = "Player" ,  func = "CheckSoulstones" },   
-    [23] = { name = "troll potion", shortName = "trollpotion", color = { r = 0.58, g = 0.51, b = 0.79 }, buffIDs = {3223}, buffOptionsGroup= "Consumable"},          
+    [23] = { name = "troll potion", shortName = "trollpotion", color = { r = 0.58, g = 0.51, b = 0.79 }, buffIDs = {3223}, buffOptionsGroup= "Consumable"}, 
+    [24] = { name = "Greater Arcane Elixir", shortName = "G. Arc. Elixir", color = { r = 0.58, g = 0.51, b = 0.79 }, buffIDs = {17539}, buffOptionsGroup= "Consumable", classes = {"WARLOCK", "MAGE"}},
+    [25] = { name = "Elixir of Shadow Power", shortName = "E. Shadow Power", color = { r = 0.58, g = 0.51, b = 0.79 }, buffIDs = {11474}, buffOptionsGroup= "Consumable", classes = {"WARLOCK"}},    
+    [26] = { name = "Elixir of the Mongoose", shortName = "Mongoose", color = { r = 0.58, g = 0.51, b = 0.79 }, buffIDs = {11474}, buffOptionsGroup= "Consumable", classes = {"WARRIOR", "ROGUE", "HUNTER"}},       
 }
 
 function ReturnBuffTracker:CheckAlive()
