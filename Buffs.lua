@@ -16,7 +16,7 @@ ReturnBuffTracker.Buffs = {
         optionText = "Healer Mana",
         func = "CheckMana",
         color = {r = 0.4, g = 0.6, b = 1},
-        classes = {"PRIEST", "PALADIN", "DRUID"},
+        classes = {"PRIEST", "PALADIN", "DRUID", "SHAMAN"},
         buffOptionsGroup = "General"
     },
 
@@ -51,7 +51,7 @@ ReturnBuffTracker.Buffs = {
         shortName = "Intellect",
         color = {r = 0.41, g = 0.8, b = 0.94},
         buffNames = {"Arcane Intellect", "Arcane Brilliance"},
-        classes = {"HUNTER", "WARLOCK", "PRIEST", "PALADIN", "DRUID", "MAGE"},
+        classes = {"HUNTER", "WARLOCK", "PRIEST", "PALADIN", "DRUID", "MAGE", "SHAMAN"},
         buffOptionsGroup = "Player"
     },
 
@@ -76,7 +76,7 @@ ReturnBuffTracker.Buffs = {
         shortName = "Divine Spirit",
         color = {r = 1.0, g = 1.0, b = 1.0},
         buffNames = {"Divine Spirit", "Prayer of Spirit"},
-        classes = {"PRIEST", "PALADIN", "DRUID", "MAGE"},
+        classes = {"PRIEST", "PALADIN", "DRUID", "MAGE", "SHAMAN"},
         buffOptionsGroup = "Player"
     },
 
@@ -167,7 +167,7 @@ ReturnBuffTracker.Buffs = {
     [20] = {
         name = "Slip'kik's Savvy",
         shortName = "DMT Crit",
-        classes = { "WARLOCK", "PRIEST", "PALADIN", "DRUID", "MAGE" },
+        classes = { "WARLOCK", "PRIEST", "PALADIN", "DRUID", "MAGE", "SHAMAN" },
         color = {r = 0, g = 1, b = 1},
         buffOptionsGroup = "World"
     },

@@ -10,7 +10,8 @@ ReturnBuffTracker.Constants.ClassNames = {
     PRIEST = "Priest",
     PALADIN = "Paladin",
     DRUID = "Druid",
-    MAGE = "Mage"
+    MAGE = "Mage",
+    SHAMAN = "Shaman"
 }
 
 ReturnBuffTracker.Constants.BarOptionGroups = {
