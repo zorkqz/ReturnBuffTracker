@@ -29,8 +29,24 @@ ReturnBuffTracker.Buffs = {
         classes = {"HUNTER", "WARLOCK", "MAGE"},
         buffOptionsGroup = "General"
     },
-
+    
     [04] = {
+        name = "In Combat",
+        shortName = "In Combat",
+        color = {r = 1, g = 1, b = 1},
+        buffOptionsGroup = "General",
+        func = "CheckInCombat"
+    },
+
+    [05] = {
+        name = "Soulstone Resurrection",
+        shortName = "Soulstones",
+        color = {r = 0.58, g = 0.51, b = 0.79},
+        buffOptionsGroup = "Player",
+        func = "CheckSoulstones"
+    },
+
+    [06] = {
         name = "Arcane Intellect",
         shortName = "Intellect",
         color = {r = 0.41, g = 0.8, b = 0.94},
@@ -39,7 +55,7 @@ ReturnBuffTracker.Buffs = {
         buffOptionsGroup = "Player"
     },
 
-    [05] = {
+    [07] = {
         name = "Mark of the Wild",
         shortName = "MotW",
         color = {r = 1.0, g = 0.49, b = 0.04},
@@ -47,7 +63,7 @@ ReturnBuffTracker.Buffs = {
         buffOptionsGroup = "Player"
     },
 
-    [06] = {
+    [08] = {
         name = "Power Word: Fortitude",
         shortName = "Fortitude",
         color = {r = 1.0, g = 1.0, b = 1.0},
@@ -55,7 +71,7 @@ ReturnBuffTracker.Buffs = {
         buffOptionsGroup = "Player"
     },
 
-    [07] = {
+    [09] = {
         name = "Divine Spirit",
         shortName = "Divine Spirit",
         color = {r = 1.0, g = 1.0, b = 1.0},
@@ -64,7 +80,7 @@ ReturnBuffTracker.Buffs = {
         buffOptionsGroup = "Player"
     },
 
-    [08] = {
+    [10] = {
         name = "Shadow Protection",
         shortName = "Shadow Protection",
         color = {r = 0.6, g = 0.6, b = 0.6},
@@ -72,7 +88,7 @@ ReturnBuffTracker.Buffs = {
         buffOptionsGroup = "Player"
     },
 
-    [09] = {
+    [11] = {
         name = "Blessing of Kings",
         shortName = "Kings",
         color = {r = 0.96, g = 0.55, b = 0.73},
@@ -81,7 +97,7 @@ ReturnBuffTracker.Buffs = {
         missingMode = "class"
     },
 
-    [10] = {
+    [12] = {
         name = "Blessing of Salvation",
         shortName = "Salvation",
         color = {r = 0.96, g = 0.55, b = 0.73},
@@ -90,7 +106,7 @@ ReturnBuffTracker.Buffs = {
         missingMode = "class"
     },
 
-    [11] = {
+    [13] = {
         name = "Blessing of Wisdom",
         shortName = "Wisdom",
         color = {r = 0.96, g = 0.55, b = 0.73},
@@ -100,7 +116,7 @@ ReturnBuffTracker.Buffs = {
         missingMode = "class"
     },
 
-    [12] = {
+    [14] = {
         name = "Blessing of Might",
         shortName = "Might",
         color = {r = 0.96, g = 0.55, b = 0.73},
@@ -110,7 +126,7 @@ ReturnBuffTracker.Buffs = {
         missingMode = "class"
     },
 
-    [13] = {
+    [15] = {
         name = "Blessing of Light",
         shortName = "Light",
         color = {r = 0.96, g = 0.55, b = 0.73},
@@ -119,7 +135,7 @@ ReturnBuffTracker.Buffs = {
         missingMode = "class"
     },
 
-    [14] = {
+    [16] = {
         name = "Blessing of Sanctuary",
         shortName = "Sanctuary",
         color = {r = 0.96, g = 0.55, b = 0.73},
@@ -128,41 +144,41 @@ ReturnBuffTracker.Buffs = {
         missingMode = "class"
     },
 
-    [15] = {
+    [17] = {
         name = "Rallying Cry of the Dragonslayer",
         shortName = "Dragonslayer",
         color = {r = 0, g = 0, b = 0},
         buffOptionsGroup = "World"
     },
 
-    [16] = {
+    [18] = {
         name = "Songflower Serenade",
         shortName = "Songflower",
         color = {r = 0, g = 0, b = 0},
         buffOptionsGroup = "World"
     },
-    [17] = {
+    [19] = {
         name = "Fengus' Ferocity",
         shortName = "DMT AP Buff",
         color = {r = 0, g = 1, b = 1},
         classes = {"WARRIOR", "ROGUE"},
         buffOptionsGroup = "World"
     },
-    [18] = {
+    [20] = {
         name = "Slip'kik's Savvy",
         shortName = "DMT Crit Buff",
         classes = { "WARLOCK", "PRIEST", "PALADIN", "DRUID", "MAGE" },
         color = {r = 0, g = 1, b = 1},
         buffOptionsGroup = "World"
     },
-    [19] = {
+    [21] = {
         name = "Mol'dar's Moxie",
         shortName = "DMT Stamina Buff",
         color = {r = 0, g = 1, b = 1},
         buffOptionsGroup = "World"
     },
 
-    [20] = {
+    [22] = {
         name = "Fire Protection",
         shortName = "Fire Protection",
         optionText = "Greater Fire Protection Potion",
@@ -170,24 +186,9 @@ ReturnBuffTracker.Buffs = {
         buffOptionsGroup = "Consumable"
     },
 
-    [21] = {
-        name = "In Combat",
-        shortName = "In Combat",
-        color = {r = 1, g = 1, b = 1},
-        buffOptionsGroup = "General",
-        func = "CheckInCombat"
-    },
-
-    [22] = {
-        name = "Soulstone Resurrection",
-        shortName = "Soulstones",
-        color = {r = 0.58, g = 0.51, b = 0.79},
-        buffOptionsGroup = "Player",
-        func = "CheckSoulstones"
-    },
     [23] = {
-        name = "troll potion",
-        shortName = "trollpotion",
+        name = "Mighty Troll's Blood Potion",
+        shortName = "Troll's Blood Potion",
         color = {r = 0.58, g = 0.51, b = 0.79},
         buffIDs = {3223},
         buffOptionsGroup = "Consumable",
@@ -195,7 +196,7 @@ ReturnBuffTracker.Buffs = {
     },
     [24] = {
         name = "Greater Arcane Elixir",
-        shortName = "G. Arc. Elixir",
+        shortName = "Greater Arcane E.",
         color = {r = 0.58, g = 0.51, b = 0.79},
         buffIDs = {17539},
         buffOptionsGroup = "Consumable",
