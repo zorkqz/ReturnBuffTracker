@@ -187,14 +187,6 @@ ReturnBuffTracker.Buffs = {
     },
 
     [23] = {
-        name = "Mighty Troll's Blood Potion",
-        shortName = "Troll's Blood Potion",
-        color = {r = 0.58, g = 0.51, b = 0.79},
-        buffIDs = {3223},
-        buffOptionsGroup = "Consumable",
-        classes = {"MAGE"}
-    },
-    [24] = {
         name = "Greater Arcane Elixir",
         shortName = "Greater Arcane E.",
         color = {r = 0.58, g = 0.51, b = 0.79},
@@ -202,7 +194,7 @@ ReturnBuffTracker.Buffs = {
         buffOptionsGroup = "Consumable",
         classes = {"WARLOCK", "MAGE"}
     },
-    [25] = {
+    [24] = {
         name = "Elixir of Shadow Power",
         shortName = "E. Shadow Power",
         color = {r = 0.58, g = 0.51, b = 0.79},
@@ -210,7 +202,7 @@ ReturnBuffTracker.Buffs = {
         buffOptionsGroup = "Consumable",
         classes = {"WARLOCK"}
     },
-    [26] = {
+    [25] = {
         name = "Elixir of the Mongoose",
         shortName = "Mongoose",
         color = {r = 0.58, g = 0.51, b = 0.79},
