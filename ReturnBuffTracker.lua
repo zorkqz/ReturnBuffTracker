@@ -35,6 +35,7 @@ function ReturnBuffTracker:OnInitialize()
         buffbars[group] = {}
     end
 
+    
 
     
     for k, buff in ipairs(ReturnBuffTracker.Buffs) do
