@@ -159,21 +159,21 @@ ReturnBuffTracker.Buffs = {
     },
     [19] = {
         name = "Fengus' Ferocity",
-        shortName = "DMT AP Buff",
+        shortName = "DMT AP",
         color = {r = 0, g = 1, b = 1},
         classes = {"WARRIOR", "ROGUE"},
         buffOptionsGroup = "World"
     },
     [20] = {
         name = "Slip'kik's Savvy",
-        shortName = "DMT Crit Buff",
+        shortName = "DMT Crit",
         classes = { "WARLOCK", "PRIEST", "PALADIN", "DRUID", "MAGE" },
         color = {r = 0, g = 1, b = 1},
         buffOptionsGroup = "World"
     },
     [21] = {
         name = "Mol'dar's Moxie",
-        shortName = "DMT Stamina Buff",
+        shortName = "DMT Stamina",
         color = {r = 0, g = 1, b = 1},
         buffOptionsGroup = "World"
     },
