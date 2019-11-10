@@ -12,10 +12,8 @@ local defaults = {
 function ReturnBuffTracker:OnInitialize()
 
     ReturnBuffTracker.OptionBarNames = {}
-    print(ReturnBuffTracker.Constants.BarOptionGroups)
     for i, v in pairs(ReturnBuffTracker.Constants.BarOptionGroups) do
         ReturnBuffTracker.OptionBarNames[i] = {}
-        print(i..v)
     end
 
     for k, buff in pairs(ReturnBuffTracker.Buffs) do
@@ -31,10 +29,21 @@ function ReturnBuffTracker:OnInitialize()
 
     ReturnBuffTracker:SetupOptions()    
     ReturnBuffTracker:CreateMainFrame()
+    ReturnBuffTracker:CreateHeaderBar("text", 0, 0, 0)
+
+    local buffbars = {}
+    for k, group in pairs(ReturnBuffTracker.Constants.BarOptionGroups) do
+        buffbars[group] = {}
+    end
+
+
     
     for k, buff in ipairs(ReturnBuffTracker.Buffs) do
+        tinsert(buffbars[buff.buffOptionsGroup], buff)
         buff.bar = ReturnBuffTracker:CreateInfoBar(buff.text or buff.shortName, buff.color.r, buff.color.g, buff.color.b)
     end
+
+    
     ReturnBuffTracker:UpdateBars()
     
     ReturnBuffTracker.nextBuff = 1

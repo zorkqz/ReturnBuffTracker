@@ -68,6 +68,13 @@ function ReturnBuffTracker:SetHeightForBars(numOfBars)
     ReturnBuffTracker.mainFrame:SetHeight(height)
 end
 
+function ReturnBuffTracker:CreateHeaderBar(text, r, g, b)
+    local theBar = CreateFrame("Frame", text, ReturnBuffTracker.mainFrame)
+    theBar.textString = theBar:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    theBar.textString:SetPoint("CENTER", ReturnBuffTracker.mainFrame, "TOP", 0, -7)
+    theBar.textString:SetText(text)
+end
+
 function ReturnBuffTracker:CreateInfoBar(text, r, g, b)
     local theBar = CreateFrame("Frame", text, ReturnBuffTracker.mainFrame)
     theBar.text = text

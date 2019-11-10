@@ -141,7 +141,6 @@ local function getOptions()
                                 order = 6,
                                 values = ReturnBuffTracker.OptionBarNames.Consumable,
                                 get = function(self, bar)
-                                    print(bar)
                                     return
                                         not ReturnBuffTracker.db.profile
                                             .deactivatedBars[bar]
