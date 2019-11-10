@@ -29,7 +29,6 @@ function ReturnBuffTracker:OnInitialize()
 
     ReturnBuffTracker:SetupOptions()    
     ReturnBuffTracker:CreateMainFrame()
-    ReturnBuffTracker:CreateHeaderBar("text", 0, 0, 0)
 
     local buffbars = {}
     for k, group in pairs(ReturnBuffTracker.Constants.BarOptionGroups) do
