@@ -22,6 +22,14 @@ ReturnBuffTracker.Constants.BarOptionGroups = {
  Misc = "Misc"
 }
 
+ReturnBuffTracker.Constants.BarOptionGroups = {
+ General = "General",
+ Player = "Player",
+ World= "World",
+ Consumable = "Consumable",
+ Misc = "Misc"
+}
+
 ReturnBuffTracker.Constants.ClassColors = {
     HUNTER = {r = 0.67, g = 0.83, b = 0.45},
     Hunter = {r = 0.67, g = 0.83, b = 0.45},
