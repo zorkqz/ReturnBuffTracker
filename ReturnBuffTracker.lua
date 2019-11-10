@@ -12,18 +12,37 @@ local defaults = {
 function ReturnBuffTracker:OnInitialize()
 
     ReturnBuffTracker.OptionBarNames = {}
-    for k, buff in ipairs(ReturnBuffTracker.Buffs) do
-        ReturnBuffTracker.OptionBarNames[buff.optionText or buff.text or buff.name] = buff.optionText or buff.text or buff.name
+    for i, v in pairs(ReturnBuffTracker.Constants.BarOptionGroups) do
+        ReturnBuffTracker.OptionBarNames[i] = {}
+    end
+
+    for k, buff in pairs(ReturnBuffTracker.Buffs) do
+        if (buff.buffOptionsGroup) then
+        ReturnBuffTracker.OptionBarNames[buff.buffOptionsGroup][buff.optionText or buff.text or buff.name] = buff.optionText or buff.text or buff.name;
+        else
+
+        end
+
     end
 
     ReturnBuffTracker.db = LibStub("AceDB-3.0"):New("ReturnBuffTrackerDB", defaults, true)
 
     ReturnBuffTracker:SetupOptions()    
     ReturnBuffTracker:CreateMainFrame()
+
+    local buffbars = {}
+    for k, group in pairs(ReturnBuffTracker.Constants.BarOptionGroups) do
+        buffbars[group] = {}
+    end
+
+
     
     for k, buff in ipairs(ReturnBuffTracker.Buffs) do
+        tinsert(buffbars[buff.buffOptionsGroup], buff)
         buff.bar = ReturnBuffTracker:CreateInfoBar(buff.text or buff.shortName, buff.color.r, buff.color.g, buff.color.b)
     end
+
+    
     ReturnBuffTracker:UpdateBars()
     
     ReturnBuffTracker.nextBuff = 1
