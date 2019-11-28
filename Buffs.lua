@@ -206,10 +206,42 @@ ReturnBuffTracker.Buffs = {
         name = "Elixir of the Mongoose",
         shortName = "Mongoose",
         color = {r = 0.58, g = 0.51, b = 0.79},
-        buffIDs = {11474},
+        buffIDs = {17538},
         buffOptionsGroup = "Consumable",
         classes = {"WARRIOR", "ROGUE", "HUNTER"}
-    }
+    },
+    [26] = {
+        name = "Juju Power",
+        shortName = "Juju Power",
+        color = {r = 0.58, g = 0.51, b = 0.79},
+        buffIDs = {16323},
+        buffOptionsGroup = "Consumable",
+        classes = {"WARRIOR", "ROGUE"},
+    },
+    [27] = {
+        name = "Juju Might",
+        shortName = "Juju Might",
+        color = {r = 0.58, g = 0.51, b = 0.79},
+        buffIDs = {16329},
+        buffOptionsGroup = "Consumable",
+        classes = {"WARRIOR", "ROGUE","HUNTER"},
+    },
+    [28] = {
+        name = "Winterfall Firewater",
+        shortName = "Firewater",
+        color = {r = 0.58, g = 0.51, b = 0.79},
+        buffIDs = {17038},
+        buffOptionsGroup = "Consumable",
+        classes = {"WARRIOR", "ROGUE"},
+    },
+    [29] = {
+        name = "Elixir of Fortitude",
+        shortName = "E. Fortitude",
+        color = {r = 0.58, g = 0.51, b = 0.79},
+        buffIDs = {3593},
+        buffOptionsGroup = "Consumable",
+        classes = {"WARRIOR", "ROGUE"},
+    },
 }
 
 function ReturnBuffTracker:CheckAlive()
