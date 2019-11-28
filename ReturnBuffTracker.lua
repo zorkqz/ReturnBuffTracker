@@ -94,7 +94,7 @@ function ReturnBuffTracker:OnUpdate()
     else
         value, maxValue, _, buffInfo = ReturnBuffTracker:CheckBuff(buff)
         if buffInfo.PlayersWithoutBuff[2] then
-            --print(buffInfo.PlayersWithoutBuff[2].name)
+            print(buffInfo.PlayersWithoutBuff[2].name)
            -- buff.bar.buffButton:SetAttribute("unit",
             --                                 "viking")
         else
