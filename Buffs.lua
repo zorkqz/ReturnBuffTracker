@@ -348,18 +348,14 @@ function ReturnBuffTracker:CheckBuff(buff)
     local buffs = 0
     local totalBuffs = 0
     local players = {}
-    local buffInfo = { Players = {},PlayersWithBuff = {}, PlayersWithoutBuff = {}}
 
     for i = 1, 40 do
         name, _, group, _, _, class = GetRaidRosterInfo(i)
         if class and ReturnBuffTracker:Contains(buff.classes, class) then
-            tinsert(buffInfo.Players, {name = name, group = group, class = class})
             totalBuffs = totalBuffs + 1
             if ReturnBuffTracker:CheckUnitBuff("raid" .. i, buff) then
-                tinsert(buffInfo.PlayersWithBuff, {name = name, group = group, class = class})
                 buffs = buffs + 1
             else
-                tinsert(buffInfo.PlayersWithoutBuff, {name = name, group = group, class = class})
                 players[name] = {name = name, group = group, class = class}
             end
         end
@@ -402,7 +398,7 @@ function ReturnBuffTracker:CheckBuff(buff)
         i = i + 1
     end
 
-    return buffs, totalBuffs, tooltip, buffInfo
+    return buffs, totalBuffs, tooltip
 end
 
 function ReturnBuffTracker:CheckUnitBuff(unit, buff)

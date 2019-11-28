@@ -78,18 +78,7 @@ end
 function ReturnBuffTracker:CreateInfoBar(text, r, g, b)
     local theBar = CreateFrame("Frame", text, ReturnBuffTracker.mainFrame)
     theBar.text = text
-    theBar.showTooltip = false;
     
-
-    local btn = CreateFrame("Button", "myButton", theBar, "SecureActionButtonTemplate");
-    btn:SetAttribute("type", "target");
-    btn:SetAttribute("unit", "Oshida");
-    btn:SetSize(20,20)
-    btn:SetPoint("RIGHT", 0,0)
-    btn:SetNormalTexture("Interface/Buttons/UI-Panel-Button-Up")
-    btn:Show()
-    theBar.buffButton = btn
-
     theBar:SetHeight(16)
     theBar:SetWidth(120)
     theBar:SetPoint("TOPLEFT", ReturnBuffTracker.mainFrame, "TOPLEFT", 5, -5)
@@ -128,47 +117,23 @@ function ReturnBuffTracker:CreateInfoBar(text, r, g, b)
         
         theBar:SetWidth(totalWidth) 
         theBar.tooltip = tooltip
-
-        if tooltip and theBar.showTooltip then
-            GameTooltip:SetOwner(theBar, "ANCHOR_CURSOR")
+    end
+    
+    theBar:SetScript("OnEnter", function(self)
+        GameTooltip:AddLine("Missing " .. self.text .. ": ", 1, 1, 1)
+        if self.tooltip then
+            GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
             for k, v in ipairs(self.tooltip) do
                 GameTooltip:AddLine(v, 1, 1, 1)
             end
             GameTooltip:Show()
         end
-
-    end
-    
-    theBar:SetScript("OnEnter", function(self)
-        GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
-        GameTooltip:AddLine("UPDATING", 1, 1, 1)
-        
-        -- if self.tooltip then
-        --     GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
-        --     for k, v in ipairs(self.tooltip) do
-        --         GameTooltip:AddLine(v, 1, 1, 1)
-        --     end
-        --     GameTooltip:Show()
-        -- end
-        --GameTooltip:Show()
-        self.showTooltip =true
-        GameTooltip:Show()
     end)
     theBar:SetScript("OnLeave", function(self)
-        self.showTooltip =false
         GameTooltip:Hide()
     end)
     
-    theBar:SetScript("OnMouseDown", function(self)
-        if IsShiftKeyDown() then
-            for k, v in ipairs(self.tooltip) do
-                SendChatMessage(v, "RAID")
-            end
-            
-        else
-         ReturnBuffTracker.mainFrame:StartMoving()
-        end
-     end)
+    theBar:SetScript("OnMouseDown", function(self) ReturnBuffTracker.mainFrame:StartMoving() end)
     theBar:SetScript("OnMouseUp", function(self)
         ReturnBuffTracker.mainFrame:StopMovingOrSizing()
         if not ReturnBuffTracker.db.profile.position then
