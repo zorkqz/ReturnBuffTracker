@@ -1,7 +1,7 @@
 local ReturnBuffTracker = LibStub("AceAddon-3.0"):GetAddon("ReturnBuffTracker")
 
 function ReturnBuffTracker:CreateMainFrame()
-    local theFrame = CreateFrame("Frame", "ReturnBuffTrackerUI", UIParent)
+    local theFrame = CreateFrame("Frame", "ReturnBuffTrackerUI", UIParent, "BackdropTemplate")
     
     theFrame:ClearAllPoints()
     if ReturnBuffTracker.db.profile.position then
